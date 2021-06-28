@@ -8,8 +8,8 @@ workflow:
   steps:
 
     - name: PhyloPGM results
-      type: bash
-      script: check.bash
+      type: python
+      script: check.py
       quotes: ${input}
 
   inputs:
