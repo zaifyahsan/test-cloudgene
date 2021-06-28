@@ -1,7 +1,7 @@
 id: test-cloudgene
 name: Test Cloudgene
 description: Test Application for Cloudgene.<br>This sample application runs PhyloPGM server.
-version: 1.0.0
+version: 1.1.0
 author: faizyahsan
 submitButton: Generate PhyloPGM results
 workflow:
