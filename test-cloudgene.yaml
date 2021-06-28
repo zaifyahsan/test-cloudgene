@@ -1,0 +1,19 @@
+id: test-cloudgene
+name: Test Cloudgene
+description: Test Application for Cloudgene.<br>This sample application runs PhyloPGM server.
+version: 1.0.0
+author: faizyahsan
+submitButton: Generate PhyloPGM results
+workflow:
+  steps:
+
+    - name: PhyloPGM results
+      type: bash
+      script: check.bash
+      quotes: ${input}
+
+  inputs:
+    - id: input
+      description: Genomic Locations
+      type: text
+      value: 5
