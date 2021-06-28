@@ -14,6 +14,6 @@ workflow:
 
   inputs:
     - id: input
-      description: Genomic Locations
+      description: GenomicLocations
       type: text
       value: 5
