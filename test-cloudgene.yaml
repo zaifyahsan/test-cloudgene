@@ -1,18 +1,53 @@
-id: PhyloPGM
-name: PhyloPGM
-description: Runs PhyloPGM program
-version: 1.0.2
+id: groupTAD
+name: groupTAD
+description: groupTAD is a two phases algorithm that exploit locally matched chromosomal conformation to make better TAD boundary annotation at high resolution. groupTAD can make TAD boundary annotation even from a contact map containing as less as 100 million contact pairs.
+version: 1.0
 workflow:
   steps:
-    - name: running PhyloPGM
-      cmd: cat $input > try.txt
+    - name: preparing Hi-C contact map input
+      cmd: /bin/mv $input $output
+    - name: finding TAD boundary with groupTAD
+      cmd: /usr/bin/python3 caller.py -r 5000 -d ${database}.txt -i ${output}/$(basename -- "$input") -c $chromosome
       bash: true
   inputs:
     - id: input
-      description: Genomic Locations
-      type: text
-      values: chr2
-      
+      description: Hi-C contact map
+      type: local_file
+      accept: .mcool
+    - id: chromosome
+      description: Chromosome
+      type: list
+      values:
+        chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8 chr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16 chr17 chr18 chr19 chr20 chr21 chr22: all 
+        chr1: chr1
+        chr2: chr2
+        chr3: chr3
+        chr4: chr4
+        chr5: chr5
+        chr6: chr6
+        chr7: chr7
+        chr8: chr8
+        chr9: chr9
+        chr10: chr10
+        chr11: chr11
+        chr12: chr12
+        chr13: chr13
+        chr14: chr14
+        chr15: chr15
+        chr16: chr16
+        chr17: chr17
+        chr18: chr18
+        chr19: chr19
+        chr20: chr20
+        chr21: chr21
+        chr22: chr22
+    - id: database
+      description: database
+      type: list
+      values:
+        db192: 192 Hi-C experiments
+
+
   outputs:
     - id: output
       description: Output Folder
