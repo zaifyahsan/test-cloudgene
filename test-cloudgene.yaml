@@ -9,9 +9,8 @@ workflow:
       bash: true
   inputs:
     - id: input
-      description: Hi-C contact map
-      type: local_file
-      accept: .mcool
+      description: Genomic Location(s)
+      type: text
     - id: chromosome
       description: Chromosome
       type: list
