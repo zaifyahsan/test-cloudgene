@@ -5,7 +5,7 @@ version: 1.0.0
 workflow:
   steps:
     - name: running PhyloPGM
-      cmd: bash check.bash $input
+      cmd: /bin/bash check.bash $input
       bash: true
   inputs:
     - id: input
