@@ -4,10 +4,8 @@ description: runs PhyloPGM
 version: 1.0.2
 workflow:
   steps:
-    - name: preparing Hi-C contact map input
-      cmd: /bin/mv $input $output
-    - name: finding TAD boundary with groupTAD
-      cmd: /usr/bin/python3 caller.py -r 5000 -d ${database}.txt -i ${output}/$(basename -- "$input") -c $chromosome
+    - name: running PhyloPGM
+      cmd: cat $input > try.txt
       bash: true
   inputs:
     - id: input
