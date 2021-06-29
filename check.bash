@@ -1,1 +1,1 @@
-echo $1
+echo "Entered value: $1"
