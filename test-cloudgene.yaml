@@ -11,7 +11,7 @@ workflow:
     - id: input
       description: Genomic Locations
       type: text
-      values: chr2 1000 2000 -
+      values: chr2
       
   outputs:
     - id: output
