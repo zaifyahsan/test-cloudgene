@@ -5,12 +5,12 @@ version: 1.0.2
 workflow:
   steps:
     - name: running PhyloPGM
-      cmd: cat $input > try.txt
+      cmd: /bin/cat $input > try.txt
       bash: true
   inputs:
     - id: input
       description: Genomic Location(s)
-      type: text
+      type: textbox
     - id: chromosome
       description: Chromosome
       type: list
