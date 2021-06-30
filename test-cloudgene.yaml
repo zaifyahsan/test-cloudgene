@@ -10,7 +10,7 @@ workflow:
   inputs:
     - id: input
       description: Genomic Location(s)
-      type: local_file
+      type: textarea
 
   outputs:
     - id: output
