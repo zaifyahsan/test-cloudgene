@@ -6,6 +6,7 @@ workflow:
   steps:
     - name: running PhyloPGM
       cmd: /bin/echo $(basename -- "$input")
+      cmd: /bin/mv $input $output
       bash: true
   inputs:
     - id: input
