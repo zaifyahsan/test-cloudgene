@@ -5,7 +5,7 @@ version: 1.0.2
 workflow:
   steps:
     - name: running PhyloPGM
-      cmd: /bin/cat $input > try.txt
+      cmd: /bin/echo "$input"
       bash: true
   inputs:
     - id: input
