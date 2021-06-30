@@ -5,12 +5,12 @@ version: 1.0.2
 workflow:
   steps:
     - name: running PhyloPGM
-      cmd: /bin/echo "$input"
+      cmd: /bin/echo $(basename -- "$input")
       bash: true
   inputs:
     - id: input
       description: Genomic Location(s)
-      type: textarea
+      type: local_file
 
   outputs:
     - id: output
